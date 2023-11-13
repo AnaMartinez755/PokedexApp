@@ -1,0 +1,108 @@
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+.main-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 90%;
+}
+.img-poke-container {
+  background-color: var(--type-grass);
+  width: 50%;
+}
+.info-poke-container {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  font-family: "FontAwesome";
+  margin: auto;
+  padding: 30px;
+  flex-direction: column;
+  background-color: #ffffff;
+  width: 50%;
+  height: 100%;
+}
+.first-container {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.second-container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 50%;
+}
+.pokedex-data-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  height: 100%;
+  margin: 0;
+}
+.about-data-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.about-data-container2 {
+  margin-left: 5rem;
+  flex-wrap: wrap;
+}
+.nav-inter-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-inter-container a {
+  text-decoration: none;
+  color: black;
+  margin-right: 4rem;
+}
+.nav-inter-container a:hover {
+  color: red;
+}
+.img-poke-container {
+  display: flex;
+  flex-direction: column;
+}
+.img-container {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 20%;
+  align-items: flex-end;
+}
+.buttons-container button {
+  width: 334rem;
+  height: 60px;
+  border-radius: 10px;
+  margin: 10px;
+  border-color: transparent;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.button2 {
+  background-color: tomato;
+}
+.img-container img {
+  width: 50%;
+}
+
+@media (max-width: 600px) {
+  .main-container > * {
+    flex-basis: 100%;
+  }
+}
