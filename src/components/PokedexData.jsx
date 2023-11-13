@@ -12,8 +12,11 @@ const PokedexData = ({specie}) => {
           <b>About this Pokemon:</b>
         </p>
         <p>
-          Bulsaur is isodsopsdm;osdmvosdvmoksdmvodsmvksdlvmsk;dmvsdmvsk;
-          dlvmaadvdsvsdvsdvsdvsdvsdvsdvsdvsdv
+          Bulsaur is isodsopsdm;
+          osdmvosdvmoksdmvodsmvks
+          dlvmsk;dmvsdmvsk;
+          dlvmaadvdsvsdvsdvsdvsdvs
+          dvsdvsdvsdv
         </p>
       </div>
       <div className="about-data-container">

@@ -144,7 +144,7 @@ body a {
 @media (max-width: 600px) {
   .form-control {
     margin: auto;
-    width: 50vh;
+    width: 100%;
   }
 }
 .poderes-pokemon p {

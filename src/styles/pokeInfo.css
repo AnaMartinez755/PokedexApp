@@ -105,4 +105,11 @@
   .main-container > * {
     flex-basis: 100%;
   }
+  .img-poke-container{
+    margin-top: 1rem;
+    background-color: #ffffff;
+  }
+  .img-poke-container img{
+    margin-bottom: 1rem;
+  }
 }
