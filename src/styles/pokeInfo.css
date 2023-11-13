@@ -6,10 +6,6 @@
   width: 100%;
   height: 90%;
 }
-.img-poke-container {
-  background-color: var(--type-grass);
-  width: 50%;
-}
 .info-poke-container {
   flex-wrap: wrap;
   display: flex;
@@ -71,6 +67,7 @@
 .img-poke-container {
   display: flex;
   flex-direction: column;
+  width: 50%;
 }
 .img-container {
   height: 80%;
@@ -87,8 +84,6 @@
   align-items: flex-end;
 }
 .buttons-container button {
-  width: 334rem;
-  height: 60px;
   border-radius: 10px;
   margin: 10px;
   border-color: transparent;
@@ -101,15 +96,15 @@
   width: 50%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .main-container > * {
     flex-basis: 100%;
   }
-  .img-poke-container{
+  .img-poke-container {
     margin-top: 1rem;
     background-color: #ffffff;
   }
-  .img-poke-container img{
+  .img-poke-container img {
     margin-bottom: 1rem;
   }
 }

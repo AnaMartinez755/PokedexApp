@@ -2,10 +2,10 @@ import { useState } from "react";
 import { useContext } from "react";
 import { PokemonsContext } from "../components/context/PokemonsContex";
 import { useEffect } from "react";
-const useFetchUsers = (endPoint) => {
-  const { pokemons, setPokemons } = useContext(PokemonsContext);
+const useFetchUsers = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [pokemonList, setPokemonList] = useState([]);
   const pokemonInfo = [];
-
   const fetchUsers = async () => {
     for (let i = 0; i < 60; i++) {
       try {
@@ -18,12 +18,13 @@ const useFetchUsers = (endPoint) => {
         console.log(error);
       }
     }
-    setPokemons(pokemonInfo);
+    setPokemonList(pokemonInfo);
+    setIsLoading(false);
   };
   useEffect(() => {
     fetchUsers();
-  }, [endPoint]);
-  return { pokemons };
+  }, []);
+  return { pokemonList, isLoading };
 };
 
 export default useFetchUsers;

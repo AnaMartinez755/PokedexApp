@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 const useFetchSpecies = (endPoint) => {
-  console.log(endPoint);
+  const [isLoagindSpecies, setIsLoagindSpecies] = useState(true);
   const [species, setSpecies] = useState([]);
   const fetchSpecies = async () => {
     try {
@@ -10,6 +10,7 @@ const useFetchSpecies = (endPoint) => {
       );
       const data = await response.json();
       setSpecies(data);
+      setIsLoagindSpecies(false);
     } catch (error) {
       console.log(error);
     }
@@ -17,7 +18,7 @@ const useFetchSpecies = (endPoint) => {
   useEffect(() => {
     fetchSpecies();
   }, [endPoint]);
-  return { species };
+  return { species,isLoagindSpecies };
 };
 
 export default useFetchSpecies;

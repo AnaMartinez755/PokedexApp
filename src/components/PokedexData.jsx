@@ -1,50 +1,58 @@
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import { PokemonsContext } from "./context/PokemonsContex";
-const PokedexData = ({specie}) => {
-  console.log(specie)
+import { PokemonColorMap } from "../hooks/pokemonColorMap";
+const PokedexData = () => {
+  const { pokemonList, isLoading, useFetchSpecies } =
+    useContext(PokemonsContext);
   const { id } = useParams();
-  const { pokemons } = useContext(PokemonsContext);
+  const { species, isLoagindSpecies } = useFetchSpecies(id);
+  console.log(isLoagindSpecies);
+  const { pokemonColors } = PokemonColorMap();
   return (
-    <div className="pokedex-data-container">
-      <div className="about-this-pokemon-container">
-        <p>
-          <b>About this Pokemon:</b>
-        </p>
-        <p>
-          Bulsaur is isodsopsdm;
-          osdmvosdvmoksdmvodsmvks
-          dlvmsk;dmvsdmvsk;
-          dlvmaadvdsvsdvsdvsdvsdvs
-          dvsdvsdvsdv
-        </p>
-      </div>
-      <div className="about-data-container">
-        <div className="about-data-container1">
-          <b>
-            Species:
-            <br />
-            Height:
-            <br />
-            Weight:
-            <br />
-            Abilties:
-            <br />
-          </b>
+    <>
+      {isLoading ? (
+        <p>is loading pokemon...</p>
+      ) : isLoagindSpecies ? (
+        <p>is loading species..</p>
+      ) : (
+        <div className="pokedex-data-container">
+          <div className="about-this-pokemon-container">
+            <p style={{ color: pokemonColors[id] }}>
+              <b>About this Pokemon:</b>
+            </p>
+            <p>{species.flavor_text_entries[8].flavor_text}</p>
+          </div>
+          <div className="about-data-container">
+            <div className="about-data-container1">
+              <b>
+                Species:
+                <br />
+                Height:
+                <br />
+                Weight:
+                <br />
+                Abilties:
+                <br />
+              </b>
+            </div>
+            <div className="about-data-container2">
+              {species.genera[7].genus}
+              <br />
+              {pokemonList[id].height} (dm)
+              <br />
+              {pokemonList[id].weight} (hg)
+              <br />
+              {pokemonList[id].abilities
+                .map((ab) => ab.ability.name)
+                .join(" , ")}
+              <br />
+            </div>
+          </div>
+          <div className="weaknesses-container"></div>
         </div>
-        <div className="about-data-container2">
-          {specie}
-          <br />
-          {pokemons[id - 1].height} (dm)
-          <br />
-          {pokemons[id - 1].weight} (hg)
-          <br />
-          {pokemons[id - 1].abilities.map((ab) => ab.ability.name ).join(',')}
-          <br />
-        </div>
-      </div>
-      <div className="weaknesses-container"></div>
-    </div>
+      )}
+    </>
   );
 };
 
