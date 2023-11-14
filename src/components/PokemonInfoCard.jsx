@@ -12,19 +12,28 @@ import Status from "./Status";
 const PokemonInfoCard = () => {
   const { pokemonColors } = PokemonColorMap();
   const { id } = useParams();
-  const { pokemonList, isLoading,useFetchSpecies } = useContext(PokemonsContext);
+  const { pokemonList, isLoading, useFetchSpecies } =
+    useContext(PokemonsContext);
   const { species, isLoagindSpecies } = useFetchSpecies(id);
   const [InfoCard, setInfoCard] = useState(<PokedexData></PokedexData>);
   const handleOnClickPokedexData = () => {
     setInfoCard(<PokedexData specie="lala"></PokedexData>);
   };
   const handleOnClickStatus = () => {
-    setInfoCard(isLoading ? <p>Species not loaded</p> : (<Status pokemonList={pokemonList}></Status>))
+    setInfoCard(
+      isLoading ? (
+        <p>Species not loaded</p>
+      ) : (
+        <Status pokemonList={pokemonList}></Status>
+      )
+    );
   };
   return (
     <>
       {isLoagindSpecies ? (
         <p>is loading...</p>
+      ) : isLoading ? (
+        <p>is Loaging...</p>
       ) : (
         <div className="main-container">
           <div className="info-poke-container">
