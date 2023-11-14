@@ -4,14 +4,15 @@ import { useContext } from "react";
 import { PokemonsContext } from "./context/PokemonsContex";
 import FilterBar from "./FilterBar";
 const CardsPokemons = () => {
-  const { useFetchUsers, filteredPokemons, active, setActive } = useContext(PokemonsContext);
+  const { useFetchUsers, filteredPokemons, active, setActive } =
+    useContext(PokemonsContext);
   const { pokemonList, isLoading } = useFetchUsers();
   const { pokemonColors } = PokemonColorMap();
   const handleFilterClick = () => {
-    setActive(!active)
+    setActive(!active);
   };
   return (
-    <>
+    <div onClick={()=>setActive(!active)}>
       {isLoading ? (
         <p>is loading...</p>
       ) : (
@@ -90,7 +91,7 @@ const CardsPokemons = () => {
         </div>
       )}
       <FilterBar></FilterBar>
-    </>
+    </div>
   );
 };
 

@@ -150,13 +150,16 @@ body {
   width: 60%;
 }
 .imagen-pokemon img {
-  width: 15rem;
+  width: 35vh;
 }
 
 @media (max-width: 600px) {
   .form-control {
     margin: auto;
     width: 100%;
+  }
+  .imagen-pokemon img {
+    width: 32vh;
   }
 }
 .poderes-pokemon p {
