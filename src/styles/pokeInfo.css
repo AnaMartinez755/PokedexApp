@@ -24,8 +24,8 @@
   flex-direction: column;
   justify-content: center;
 }
-.first-container h1{
-  font-size: 10rem;
+.first-container h1 {
+  font-size: 8rem;
 }
 .second-container {
   display: flex;
@@ -84,28 +84,33 @@
   flex-direction: row;
   justify-content: center;
   height: 20%;
-  align-items: flex-end;
+  align-items: center;
+  width: 100%;
 }
 .buttons-container button {
   border-radius: 10px;
-  margin: 10px;
   border-color: transparent;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  min-width: 200px;
+  width: 90%;
+  height: 60px;
 }
-.button1-container, .button2-container{
-  width: 50%;
-}
-.button2 {
+.button2{
   background-color: tomato;
-  width: 340px;
+}
+.button1-container,
+.button2-container {
+  width: 50%;
+  text-align: center;
 }
 .img-container img {
   width: 50%;
 }
 
 @media (max-width: 800px) {
-  .first-container h1{
-    font-size: 8rem;
+  .first-container h1 {
+    font-size: 6rem;
   }
   .main-container > * {
     flex-basis: 100%;
