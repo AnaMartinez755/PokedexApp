@@ -7,7 +7,6 @@ import { useState } from "react";
 import { useContext } from "react";
 import { PokemonsContext } from "./context/PokemonsContex";
 import { PokemonColorMap } from "../hooks/pokemonColorMap";
-import useFetchSpecies from "../hooks/useFetchSpecies";
 import Status from "./Status";
 const PokemonInfoCard = () => {
   const { pokemonColors } = PokemonColorMap();
@@ -68,10 +67,16 @@ const PokemonInfoCard = () => {
               ></img>
             </div>
             <div className="buttons-container">
-              <Link className="button1-container" to={`/card/${String(Number(id) - 1)}`}>
+              <Link
+                className="button1-container"
+                to={`/card/${String(Number(id) - 1)}`}
+              >
                 <button className="button1">Previous</button>
               </Link>
-              <Link className="button2-container" to={`/card/${String(Number(id) + 1)}`}>
+              <Link
+                className="button2-container"
+                to={`/card/${String(Number(id) + 1)}`}
+              >
                 <button className="button2">Next</button>
               </Link>
             </div>

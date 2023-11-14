@@ -1,0 +1,31 @@
+.filter-bar-main-component {
+  display: flex;
+  justify-content: center;
+  z-index: 12;
+  position: fixed;
+  color: #555;
+  top: 0;
+  left: -300px;
+  width: 250px;
+  background-color: rgb(232, 234, 238);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s linear;
+  height: 100%;
+  padding: 5vh;
+}
+.filter-bar-main-component.active {
+  left: 0;
+  
+}
+
+.filter-bar-type-container {
+	display: flex;
+	flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+.type-container{
+    display: flex;
+    gap: 1vh;
+    flex-direction: row;
+}

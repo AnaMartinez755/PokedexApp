@@ -31,7 +31,7 @@ body {
   height: 100vh;
   box-sizing: border-box;
 }
-body a {
+* {
   font-family: "Roboto", sans-serif;
 }
 .nav-container {
@@ -90,6 +90,18 @@ body a {
 .form-control {
   width: 100vh;
   margin: auto;
+  font-family: "FontAwesome";
+}
+.all-pokemons-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.filter-img-container {
+  text-align: center;
+  color: #343437;
+  text-decoration: none;
+  padding: 1vh;
   font-family: "FontAwesome";
 }
 .all-pokemons {
