@@ -12,12 +12,12 @@ import Status from "./Status";
 const PokemonInfoCard = () => {
   const { pokemonColors } = PokemonColorMap();
   const { id } = useParams();
-  const { pokemonList, isLoading, useFetchSpecies } =
-    useContext(PokemonsContext);
+  const { useFetchUsers, useFetchSpecies } = useContext(PokemonsContext);
+  const { pokemonList, isLoading } = useFetchUsers();
   const { species, isLoagindSpecies } = useFetchSpecies(id);
   const [InfoCard, setInfoCard] = useState(<PokedexData></PokedexData>);
   const handleOnClickPokedexData = () => {
-    setInfoCard(<PokedexData specie="lala"></PokedexData>);
+    setInfoCard(<PokedexData></PokedexData>);
   };
   const handleOnClickStatus = () => {
     setInfoCard(

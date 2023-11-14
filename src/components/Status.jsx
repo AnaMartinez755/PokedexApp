@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 
 const Status = ({ pokemonList }) => {
   const { id } = useParams();
-  console.log(pokemonList);
   return (
     <div className="stat-main-container">
       {pokemonList[id - 1].stats.map((stat) => (

@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { PokemonsContext } from "./context/PokemonsContex";
 const CardsPokemons = () => {
-  const { pokemonList, isLoading } = useContext(PokemonsContext);
+  const { useFetchUsers } = useContext(PokemonsContext);
+  const { pokemonList, isLoading } = useFetchUsers();
   const { pokemonColors } = PokemonColorMap();
 
   return (

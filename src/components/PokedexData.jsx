@@ -3,9 +3,9 @@ import { useContext } from "react";
 import { PokemonsContext } from "./context/PokemonsContex";
 import { PokemonColorMap } from "../hooks/pokemonColorMap";
 const PokedexData = () => {
-  const { pokemonList, isLoading, useFetchSpecies } =
-    useContext(PokemonsContext);
+  const { useFetchUsers, useFetchSpecies } = useContext(PokemonsContext);
   const { id } = useParams();
+  const { pokemonList, isLoading } = useFetchUsers();
   const { species, isLoagindSpecies } = useFetchSpecies(id);
   const { pokemonColors } = PokemonColorMap();
   return (

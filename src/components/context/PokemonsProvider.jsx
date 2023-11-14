@@ -7,10 +7,9 @@ const PokemonsProvider = ({ children }) => {
   //get the pokemon id from PARAMS
 
   //Use PokemonFetch in Provider
-  const { pokemonList, isLoading } = useFetchUsers();
 
   return (
-    <PokemonsContext.Provider value={{ pokemonList, isLoading, useFetchSpecies }}>
+    <PokemonsContext.Provider value={{ useFetchUsers, useFetchSpecies }}>
       {children}
     </PokemonsContext.Provider>
   );
