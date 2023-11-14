@@ -7,7 +7,6 @@ const PokedexData = () => {
     useContext(PokemonsContext);
   const { id } = useParams();
   const { species, isLoagindSpecies } = useFetchSpecies(id);
-  console.log(isLoagindSpecies);
   const { pokemonColors } = PokemonColorMap();
   return (
     <>

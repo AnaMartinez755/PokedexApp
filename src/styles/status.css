@@ -1,0 +1,20 @@
+.stat-main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  height: 100%;
+  margin: 0;
+}
+
+.stat-container {
+  display: flex;
+  flex-direction: row;
+}
+.stat1 {
+  width: 30%;
+}
+.stat2 {
+  width: 70%;
+}

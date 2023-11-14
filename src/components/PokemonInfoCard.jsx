@@ -8,15 +8,18 @@ import { useContext } from "react";
 import { PokemonsContext } from "./context/PokemonsContex";
 import { PokemonColorMap } from "../hooks/pokemonColorMap";
 import useFetchSpecies from "../hooks/useFetchSpecies";
+import Status from "./Status";
 const PokemonInfoCard = () => {
   const { pokemonColors } = PokemonColorMap();
   const { id } = useParams();
-  const { useFetchSpecies } = useContext(PokemonsContext);
+  const { pokemonList, isLoading,useFetchSpecies } = useContext(PokemonsContext);
   const { species, isLoagindSpecies } = useFetchSpecies(id);
-  console.log(species);
   const [InfoCard, setInfoCard] = useState(<PokedexData></PokedexData>);
-  const handleOnClick = () => {
+  const handleOnClickPokedexData = () => {
     setInfoCard(<PokedexData specie="lala"></PokedexData>);
+  };
+  const handleOnClickStatus = () => {
+    setInfoCard(isLoading ? <p>Species not loaded</p> : (<Status pokemonList={pokemonList}></Status>))
   };
   return (
     <>
@@ -35,15 +38,11 @@ const PokemonInfoCard = () => {
             </div>
             <div className="second-container">
               <div className="nav-inter-container">
-                <Link onClick={handleOnClick}>
-                  {" "}
+                <Link onClick={handleOnClickPokedexData}>
                   <b>Pokedex Data</b>
                 </Link>
-                <Link onClick={handleOnClick}>
+                <Link onClick={handleOnClickStatus}>
                   <b>Status</b>
-                </Link>
-                <Link onClick={handleOnClick}>
-                  <b>Evolution</b>
                 </Link>
               </div>
 
